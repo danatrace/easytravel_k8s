@@ -72,4 +72,4 @@ spec:
   selector:
     app: easytravel
     tier: frontend
-  type: ClusterIP
+  type: LoadBalancer
