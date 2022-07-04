@@ -1,4 +1,5 @@
 #!/bin/sh
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 kubectl create namespace easytravel
 kubectl apply -f ../manifests/easytravel-mongodb-secret.yaml
 kubectl apply -f ../manifests/easytravel-config.yaml
