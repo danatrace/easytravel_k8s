@@ -67,7 +67,7 @@ metadata:
   namespace: easytravel
 spec:
   ports:
-  - port: 80
+  - port: 8000
     targetPort: 8080
   selector:
     app: easytravel
