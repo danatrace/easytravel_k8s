@@ -73,4 +73,4 @@ spec:
   selector:
     app: easytravel
     tier: backend
-  type: loadbalancer
+  type: LoadBalancer
