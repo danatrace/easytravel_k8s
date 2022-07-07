@@ -1,0 +1,29 @@
+{
+ "active": true,
+ "activeGateGroup": null,
+ "authToken": null,
+ "certificateCheckEnabled": false,
+ "davisEventsIntegrationEnabled": false,
+ "endpointStatus": "UNASSIGNED",
+ "endpointStatusInfo": "Credentials have not been assigned yet.",
+ "endpointUrl": null,
+ "eventAnalysisAndAlertingEnabled": true,
+ "eventsFieldSelectors": [
+  {
+   "active": true,
+   "fieldSelector": "type!=UNDEFINED",
+   "label": "All events"
+  }
+ ],
+ "eventsIntegrationEnabled": true,
+ "hostnameVerificationEnabled": false,
+ "label": "Easytravel",
+ "metadata": {
+  "clusterVersion": "1.245.94.20220705-101739",
+  "configurationVersions": [
+   1
+  ]
+ },
+ "prometheusExportersIntegrationEnabled": true,
+ "workloadIntegrationEnabled": true
+}

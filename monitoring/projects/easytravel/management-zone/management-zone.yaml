@@ -1,0 +1,4 @@
+config:
+- Applicationeasytravel: Applicationeasytravel.json
+Applicationeasytravel:
+- name: 'Application: easytravel'

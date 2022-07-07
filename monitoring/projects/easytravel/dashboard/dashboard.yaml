@@ -1,0 +1,4 @@
+config:
+- easytravel-demo: easytravel-demo.json
+easytravel-demo:
+- name: easytravel-demo

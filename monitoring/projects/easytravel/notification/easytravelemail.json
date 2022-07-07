@@ -1,0 +1,14 @@
+{
+ "active": true,
+ "alertingProfile": "e1e5aa63-1b72-3563-b715-6644ca512e25",
+ "bccReceivers": [],
+ "body": "{ProblemDetailsHTML}",
+ "ccReceivers": [],
+ "name": "{{.name}}",
+ "receivers": [
+  "daniel.braaf@gmail.com",
+  "daniel.braaf@dynatrace.com"
+ ],
+ "subject": "easytravel alert: {State} Problem {ProblemID}: {ImpactedEntity}",
+ "type": "EMAIL"
+}

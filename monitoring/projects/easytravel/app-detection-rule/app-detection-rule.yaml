@@ -1,0 +1,4 @@
+config:
+- EasyTravelClassic8080: EasyTravelClassic8080.json
+EasyTravelClassic8080:
+- name: EasyTravel Classic 8080

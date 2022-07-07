@@ -1,0 +1,4 @@
+config:
+- Easytravel: Easytravel.json
+Easytravel:
+- name: Easytravel

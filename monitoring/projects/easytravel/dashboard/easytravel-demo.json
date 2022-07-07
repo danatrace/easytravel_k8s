@@ -1,0 +1,1950 @@
+{
+ "dashboardMetadata": {
+  "dashboardFilter": null,
+  "name": "easytravel-demo",
+  "owner": "daniel.braaf@gmail.com",
+  "shared": false,
+  "tilesNameSize": null
+ },
+ "metadata": {
+  "clusterVersion": "1.245.94.20220705-101739",
+  "configurationVersions": [
+   6
+  ]
+ },
+ "tiles": [
+  {
+   "bounds": {
+    "height": 152,
+    "left": 380,
+    "top": 0,
+    "width": 190
+   },
+   "chartVisible": true,
+   "configured": true,
+   "filterConfig": null,
+   "name": "Host health",
+   "nameSize": "small",
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "HOSTS"
+  },
+  {
+   "bounds": {
+    "height": 152,
+    "left": 760,
+    "top": 0,
+    "width": 190
+   },
+   "configured": true,
+   "entitySelector": null,
+   "name": "Problems",
+   "nameSize": "small",
+   "problemSelector": null,
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "OPEN_PROBLEMS"
+  },
+  {
+   "bounds": {
+    "height": 152,
+    "left": 570,
+    "top": 0,
+    "width": 190
+   },
+   "chartVisible": true,
+   "configured": true,
+   "filterConfig": null,
+   "name": "Database health",
+   "nameSize": "small",
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATABASES_OVERVIEW"
+  },
+  {
+   "bounds": {
+    "height": 152,
+    "left": 190,
+    "top": 0,
+    "width": 190
+   },
+   "chartVisible": true,
+   "configured": true,
+   "filterConfig": null,
+   "name": "Service health",
+   "nameSize": "small",
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "SERVICES"
+  },
+  {
+   "bounds": {
+    "height": 342,
+    "left": 380,
+    "top": 152,
+    "width": 456
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Cpu Usage by Hosts and Containers",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:containers.cpu.usagePercent:splitBy(Container):sort(value(auto,descending)):limit(10)",
+     "id": "A",
+     "limit": null,
+     "metric": "builtin:containers.cpu.usagePercent",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [
+      "Container"
+     ],
+     "timeAggregation": "DEFAULT"
+    },
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:host.cpu.usage:splitBy(\"dt.entity.host\"):sort(value(auto,descending)):limit(10)",
+     "id": "B",
+     "limit": null,
+     "metric": "builtin:host.cpu.usage",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [
+      "dt.entity.host"
+     ],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": "",
+      "visible": true
+     },
+     "yAxes": [
+      {
+       "defaultAxis": true,
+       "displayName": "",
+       "max": "AUTO",
+       "min": "AUTO",
+       "position": "LEFT",
+       "queryIds": [
+        "A",
+        "B"
+       ],
+       "visible": true
+      }
+     ]
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": true,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": "LINE"
+      },
+      "seriesOverrides": [],
+      "unitTransform": "auto",
+      "valueFormat": "auto"
+     },
+     {
+      "matcher": "B:",
+      "properties": {
+       "alias": null,
+       "color": "TURQUOISE",
+       "seriesType": "COLUMN"
+      },
+      "seriesOverrides": [],
+      "unitTransform": "auto",
+      "valueFormat": "auto"
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": null
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": true
+     }
+    ],
+    "type": "GRAPH_CHART"
+   }
+  },
+  {
+   "bounds": {
+    "height": 342,
+    "left": 380,
+    "top": 494,
+    "width": 456
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Memory Usage by Hosts and Containers",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:containers.memory.usagePercent:splitBy(Container):sort(value(auto,descending)):limit(10)",
+     "id": "A",
+     "limit": null,
+     "metric": "builtin:containers.memory.usagePercent",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [
+      "Container"
+     ],
+     "timeAggregation": "DEFAULT"
+    },
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:host.mem.usage:splitBy(\"dt.entity.host\"):sort(value(auto,descending)):limit(10)",
+     "id": "B",
+     "limit": null,
+     "metric": "builtin:host.mem.usage",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [
+      "dt.entity.host"
+     ],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": "",
+      "visible": true
+     },
+     "yAxes": [
+      {
+       "defaultAxis": true,
+       "displayName": "",
+       "max": "AUTO",
+       "min": "AUTO",
+       "position": "LEFT",
+       "queryIds": [
+        "A",
+        "B"
+       ],
+       "visible": true
+      }
+     ]
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": true,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": "LINE"
+      },
+      "seriesOverrides": [],
+      "unitTransform": "auto",
+      "valueFormat": "auto"
+     },
+     {
+      "matcher": "B:",
+      "properties": {
+       "alias": null,
+       "color": "TURQUOISE",
+       "seriesType": "COLUMN"
+      },
+      "seriesOverrides": [],
+      "unitTransform": "auto",
+      "valueFormat": "auto"
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": null
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#93060e",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#009e60",
+        "value": 0
+       }
+      ],
+      "visible": true
+     }
+    ],
+    "type": "GRAPH_CHART"
+   }
+  },
+  {
+   "bounds": {
+    "height": 342,
+    "left": 836,
+    "top": 152,
+    "width": 304
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Cpu Usage by Containers",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:containers.cpu.usagePercent:splitBy(\"dt.entity.container_group_instance\"):sort(value(auto,descending)):limit(100)",
+     "id": "A",
+     "limit": 100,
+     "metric": "builtin:containers.cpu.usagePercent",
+     "metricSelector": null,
+     "sortBy": "DESC",
+     "spaceAggregation": null,
+     "splitBy": [
+      "dt.entity.container_group_instance"
+     ],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": null,
+      "visible": true
+     },
+     "yAxes": []
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": true,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": true
+     }
+    ],
+    "type": "TOP_LIST"
+   }
+  },
+  {
+   "bounds": {
+    "height": 342,
+    "left": 836,
+    "top": 494,
+    "width": 304
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Memory Usage by Containers",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:containers.memory.usagePercent:splitBy(\"dt.entity.container_group_instance\"):sort(value(auto,descending)):limit(10)",
+     "id": "A",
+     "limit": null,
+     "metric": "builtin:containers.memory.usagePercent",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [
+      "dt.entity.container_group_instance"
+     ],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": null,
+      "visible": true
+     },
+     "yAxes": []
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#93060e",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#009e60",
+        "value": 0
+       }
+      ],
+      "visible": true
+     }
+    ],
+    "type": "TOP_LIST"
+   }
+  },
+  {
+   "bounds": {
+    "height": 228,
+    "left": 1140,
+    "top": 608,
+    "width": 380
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Database Calls vs Time spent",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:service.dbChildCallCount:splitBy():sort(value(auto,descending)):limit(10)",
+     "id": "A",
+     "limit": null,
+     "metric": "builtin:service.dbChildCallCount",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    },
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:service.dbChildCallTime:splitBy():sort(value(auto,descending)):limit(10)",
+     "id": "B",
+     "limit": null,
+     "metric": "builtin:service.dbChildCallTime",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": "",
+      "visible": true
+     },
+     "yAxes": [
+      {
+       "defaultAxis": true,
+       "displayName": "",
+       "max": "AUTO",
+       "min": "AUTO",
+       "position": "LEFT",
+       "queryIds": [
+        "A"
+       ],
+       "visible": true
+      },
+      {
+       "defaultAxis": true,
+       "displayName": "",
+       "max": "AUTO",
+       "min": "AUTO",
+       "position": "RIGHT",
+       "queryIds": [
+        "B"
+       ],
+       "visible": true
+      }
+     ]
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     },
+     {
+      "matcher": "B:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": null
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": false
+     }
+    ],
+    "type": "GRAPH_CHART"
+   }
+  },
+  {
+   "bounds": {
+    "height": 228,
+    "left": 1140,
+    "top": 152,
+    "width": 380
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Read and Write operations per second",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:host.disk.readOps:splitBy():sort(value(auto,descending)):limit(10)",
+     "id": "A",
+     "limit": null,
+     "metric": "builtin:host.disk.readOps",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    },
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:host.disk.writeOps:splitBy():sort(value(auto,descending)):limit(10)",
+     "id": "B",
+     "limit": null,
+     "metric": "builtin:host.disk.writeOps",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": "",
+      "visible": true
+     },
+     "yAxes": [
+      {
+       "defaultAxis": true,
+       "displayName": "",
+       "max": "AUTO",
+       "min": "AUTO",
+       "position": "LEFT",
+       "queryIds": [
+        "A",
+        "B"
+       ],
+       "visible": true
+      }
+     ]
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     },
+     {
+      "matcher": "B:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": false
+     }
+    ],
+    "type": "GRAPH_CHART"
+   }
+  },
+  {
+   "bounds": {
+    "height": 228,
+    "left": 1140,
+    "top": 380,
+    "width": 380
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Read and Write throughput per second",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:host.disk.throughput.read:splitBy():sort(value(auto,descending)):limit(10)",
+     "id": "A",
+     "limit": null,
+     "metric": "builtin:host.disk.throughput.read",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    },
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:host.disk.throughput.write:splitBy():sort(value(auto,descending)):limit(10)",
+     "id": "B",
+     "limit": null,
+     "metric": "builtin:host.disk.throughput.write",
+     "metricSelector": null,
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": "",
+      "visible": true
+     },
+     "yAxes": [
+      {
+       "defaultAxis": true,
+       "displayName": "",
+       "max": "AUTO",
+       "min": "AUTO",
+       "position": "LEFT",
+       "queryIds": [
+        "A",
+        "B"
+       ],
+       "visible": true
+      }
+     ]
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     },
+     {
+      "matcher": "B:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": false
+     }
+    ],
+    "type": "GRAPH_CHART"
+   }
+  },
+  {
+   "bounds": {
+    "height": 228,
+    "left": 1520,
+    "top": 608,
+    "width": 380
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Open Security Problems",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:security.securityProblem.open.managementZone:splitBy(\"Risk Level\"):sort(value(auto,descending)):limit(100)",
+     "id": "A",
+     "limit": 100,
+     "metric": "builtin:security.securityProblem.open.managementZone",
+     "metricSelector": null,
+     "sortBy": "DESC",
+     "spaceAggregation": null,
+     "splitBy": [
+      "Risk Level"
+     ],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": {
+     "id": "all",
+     "name": "All"
+    },
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": "",
+      "visible": true
+     },
+     "yAxes": [
+      {
+       "defaultAxis": true,
+       "displayName": "",
+       "max": "AUTO",
+       "min": "AUTO",
+       "position": "LEFT",
+       "queryIds": [
+        "A"
+       ],
+       "visible": true
+      }
+     ]
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": {
+     "linkTileColorToThreshold": true,
+     "showSparkLine": true,
+     "showTrend": true
+    },
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 20
+       },
+       {
+        "color": "#f5d30f",
+        "value": 1
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": false
+     }
+    ],
+    "type": "GRAPH_CHART"
+   }
+  },
+  {
+   "bounds": {
+    "height": 152,
+    "left": 950,
+    "top": 0,
+    "width": 190
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Nr of Containers",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:containers.cpu.limit:splitBy():count:auto:sort(value(avg,descending)):limit(100)",
+     "id": "A",
+     "limit": 100,
+     "metric": "builtin:containers.cpu.limit",
+     "metricSelector": null,
+     "sortBy": "DESC",
+     "spaceAggregation": "COUNT",
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": null,
+      "visible": true
+     },
+     "yAxes": []
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": {
+     "linkTileColorToThreshold": true,
+     "showSparkLine": false,
+     "showTrend": false
+    },
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": false
+     }
+    ],
+    "type": "SINGLE_VALUE"
+   }
+  },
+  {
+   "bounds": {
+    "height": 152,
+    "left": 1330,
+    "top": 0,
+    "width": 190
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Db Connection Failure rate",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:service.dbconnections.failureRate:splitBy():sort(value(auto,descending)):limit(100)",
+     "id": "A",
+     "limit": 100,
+     "metric": "builtin:service.dbconnections.failureRate",
+     "metricSelector": null,
+     "sortBy": "DESC",
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": null,
+      "visible": true
+     },
+     "yAxes": []
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": {
+     "linkTileColorToThreshold": false,
+     "showSparkLine": false,
+     "showTrend": false
+    },
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 20
+       },
+       {
+        "color": "#f5d30f",
+        "value": 1
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": true
+     }
+    ],
+    "type": "SINGLE_VALUE"
+   }
+  },
+  {
+   "bounds": {
+    "height": 152,
+    "left": 1140,
+    "top": 0,
+    "width": 190
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Disk Space Used",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:host.disk.usedPct:splitBy():sort(value(auto,descending)):limit(100)",
+     "id": "A",
+     "limit": 100,
+     "metric": "builtin:host.disk.usedPct",
+     "metricSelector": null,
+     "sortBy": "DESC",
+     "spaceAggregation": null,
+     "splitBy": [],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": null,
+      "visible": true
+     },
+     "yAxes": []
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": false,
+     "showLegend": true
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": null
+      },
+      "seriesOverrides": [],
+      "unitTransform": null,
+      "valueFormat": null
+     }
+    ],
+    "singleValueSettings": {
+     "linkTileColorToThreshold": false,
+     "showSparkLine": false,
+     "showTrend": false
+    },
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 40
+       },
+       {
+        "color": "#f5d30f",
+        "value": 30
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": true
+     }
+    ],
+    "type": "SINGLE_VALUE"
+   }
+  },
+  {
+   "bounds": {
+    "height": 152,
+    "left": 0,
+    "top": 0,
+    "width": 190
+   },
+   "chartVisible": true,
+   "configured": true,
+   "filterConfig": null,
+   "name": "Application health",
+   "nameSize": "small",
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "APPLICATIONS"
+  },
+  {
+   "assignedEntities": [
+    "APPLICATION-14E54C10453C5022",
+    "GEOLOCATION-0000000000000000",
+    "WORLD"
+   ],
+   "bounds": {
+    "height": 342,
+    "left": 0,
+    "top": 152,
+    "width": 380
+   },
+   "configured": true,
+   "metric": "SESSION_ACTIONS_P_SESSION",
+   "name": "World map",
+   "nameSize": null,
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "APPLICATION_WORLDMAP"
+  },
+  {
+   "assignedEntities": [
+    "APPLICATION-14E54C10453C5022",
+    "GEOLOCATION-EF77F2A17134795A",
+    "CONTINENT"
+   ],
+   "bounds": {
+    "height": 342,
+    "left": 0,
+    "top": 494,
+    "width": 380
+   },
+   "configured": true,
+   "metric": "SESSION_ACTIONS_P_SESSION",
+   "name": "World map",
+   "nameSize": null,
+   "tileFilter": {
+    "managementZone": null,
+    "timeframe": null
+   },
+   "tileType": "APPLICATION_WORLDMAP"
+  },
+  {
+   "bounds": {
+    "height": 380,
+    "left": 1520,
+    "top": 0,
+    "width": 380
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Open Vulnaribilities",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": null,
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:security.securityProblem.open.managementZone:splitBy(\"Risk Level\"):sort(value(auto,descending))",
+     "id": "A",
+     "limit": null,
+     "metric": null,
+     "metricSelector": "builtin:security.securityProblem.open.managementZone:splitBy(\"Risk Level\"):sort(value(auto,descending))",
+     "sortBy": null,
+     "spaceAggregation": null,
+     "splitBy": [
+      "Risk Level"
+     ],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": {
+     "id": "all",
+     "name": "All"
+    },
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": null,
+      "visible": true
+     },
+     "yAxes": []
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": true,
+     "showLegend": false
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "RED",
+       "seriesType": "LINE"
+      },
+      "seriesOverrides": [],
+      "unitTransform": "auto",
+      "valueFormat": "0"
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 20
+       },
+       {
+        "color": "#f28289",
+        "value": 1
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": false
+     }
+    ],
+    "type": "HONEYCOMB"
+   }
+  },
+  {
+   "bounds": {
+    "height": 228,
+    "left": 1520,
+    "top": 380,
+    "width": 380
+   },
+   "configured": true,
+   "customName": "Data explorer results",
+   "name": "Procesess Affected by Open Vulnaribilities",
+   "nameSize": "small",
+   "queries": [
+    {
+     "enabled": true,
+     "filterBy": {
+      "criteria": [],
+      "entityAttribute": null,
+      "filter": null,
+      "filterOperator": null,
+      "filterType": null,
+      "globalEntity": null,
+      "nestedFilters": [],
+      "relationship": null
+     },
+     "foldTransformation": null,
+     "generatedMetricSelector": "builtin:security.vulnerabilities.global.countAffectedProcessGroups.notMuted:splitBy(Technology):sort(value(auto,descending)):limit(100)",
+     "id": "A",
+     "limit": 100,
+     "metric": "builtin:security.vulnerabilities.global.countAffectedProcessGroups.notMuted",
+     "metricSelector": null,
+     "sortBy": "DESC",
+     "spaceAggregation": null,
+     "splitBy": [
+      "Technology"
+     ],
+     "timeAggregation": "DEFAULT"
+    }
+   ],
+   "queriesSettings": {
+    "foldAggregation": null,
+    "foldTransformation": null,
+    "resolution": ""
+   },
+   "tileFilter": {
+    "managementZone": {
+     "id": "all",
+     "name": "All"
+    },
+    "timeframe": null
+   },
+   "tileType": "DATA_EXPLORER",
+   "visualConfig": {
+    "axes": {
+     "xAxis": {
+      "displayName": null,
+      "visible": true
+     },
+     "yAxes": []
+    },
+    "global": {
+     "hasTrendline": null,
+     "hideLegend": false,
+     "seriesType": null,
+     "theme": null,
+     "threshold": null
+    },
+    "graphChartSettings": {
+     "connectNulls": false
+    },
+    "heatmapSettings": {
+     "xAxisBuckets": null,
+     "yAxis": "VALUE",
+     "yAxisBuckets": null
+    },
+    "honeycombSettings": {
+     "showHive": true,
+     "showLabels": true,
+     "showLegend": false
+    },
+    "rules": [
+     {
+      "matcher": "A:",
+      "properties": {
+       "alias": null,
+       "color": "DEFAULT",
+       "seriesType": "LINE"
+      },
+      "seriesOverrides": [],
+      "unitTransform": "auto",
+      "valueFormat": "0"
+     }
+    ],
+    "singleValueSettings": null,
+    "tableSettings": {
+     "isThresholdBackgroundAppliedToCell": false
+    },
+    "thresholds": [
+     {
+      "axisTarget": "LEFT",
+      "columnId": null,
+      "queryId": "",
+      "rules": [
+       {
+        "color": "#f28289",
+        "value": 20
+       },
+       {
+        "color": "#f5d30f",
+        "value": 1
+       },
+       {
+        "color": "#2ab06f",
+        "value": 0
+       }
+      ],
+      "visible": false
+     }
+    ],
+    "type": "HONEYCOMB"
+   }
+  }
+ ]
+}

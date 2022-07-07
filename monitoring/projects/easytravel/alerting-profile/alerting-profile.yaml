@@ -1,0 +1,4 @@
+config:
+- easytravelAlerts: easytravelAlerts.json
+easytravelAlerts:
+- name: easytravel Alerts

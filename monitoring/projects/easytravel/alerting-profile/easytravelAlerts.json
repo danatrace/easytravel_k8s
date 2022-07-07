@@ -1,0 +1,99 @@
+{
+ "displayName": "{{.name}}",
+ "eventTypeFilters": [],
+ "managementZoneId": -2968967067464711700,
+ "metadata": {
+  "clusterVersion": "1.245.94.20220705-101739",
+  "configurationVersions": [],
+  "currentConfigurationVersions": [
+   "7.0.6"
+  ]
+ },
+ "mzId": "-2968967067464711674",
+ "rules": [
+  {
+   "delayInMinutes": 5,
+   "severityLevel": "RESOURCE_CONTENTION",
+   "tagFilter": {
+    "includeMode": "INCLUDE_ANY",
+    "tagFilters": [
+     {
+      "context": "KUBERNETES",
+      "key": "app.kubernetes.io/part-of",
+      "value": "easytravel"
+     }
+    ]
+   }
+  },
+  {
+   "delayInMinutes": 5,
+   "severityLevel": "PERFORMANCE",
+   "tagFilter": {
+    "includeMode": "INCLUDE_ANY",
+    "tagFilters": [
+     {
+      "context": "KUBERNETES",
+      "key": "app.kubernetes.io/part-of",
+      "value": "easytravel"
+     }
+    ]
+   }
+  },
+  {
+   "delayInMinutes": 5,
+   "severityLevel": "AVAILABILITY",
+   "tagFilter": {
+    "includeMode": "INCLUDE_ANY",
+    "tagFilters": [
+     {
+      "context": "KUBERNETES",
+      "key": "app.kubernetes.io/part-of",
+      "value": "easytravel"
+     }
+    ]
+   }
+  },
+  {
+   "delayInMinutes": 5,
+   "severityLevel": "CUSTOM_ALERT",
+   "tagFilter": {
+    "includeMode": "INCLUDE_ANY",
+    "tagFilters": [
+     {
+      "context": "KUBERNETES",
+      "key": "app.kubernetes.io/part-of",
+      "value": "easytravel"
+     }
+    ]
+   }
+  },
+  {
+   "delayInMinutes": 5,
+   "severityLevel": "MONITORING_UNAVAILABLE",
+   "tagFilter": {
+    "includeMode": "INCLUDE_ANY",
+    "tagFilters": [
+     {
+      "context": "KUBERNETES",
+      "key": "app.kubernetes.io/part-of",
+      "value": "easytravel"
+     }
+    ]
+   }
+  },
+  {
+   "delayInMinutes": 5,
+   "severityLevel": "ERROR",
+   "tagFilter": {
+    "includeMode": "INCLUDE_ANY",
+    "tagFilters": [
+     {
+      "context": "KUBERNETES",
+      "key": "app.kubernetes.io/part-of",
+      "value": "easytravel"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "anomalyDetection": {
+  "loadingTimeThresholds": {
+   "enabled": true,
+   "thresholds": []
+  },
+  "outageHandling": {
+   "globalOutage": true,
+   "globalOutagePolicy": {
+    "consecutiveRuns": 1
+   },
+   "localOutage": false,
+   "localOutagePolicy": {
+    "affectedLocations": null,
+    "consecutiveRuns": null
+   },
+   "retryOnError": true
+  }
+ },
+ "automaticallyAssignedApps": [],
+ "createdFrom": "GUI",
+ "enabled": true,
+ "entityId": "SYNTHETIC_TEST-19564343237FB567",
+ "events": [
+  {
+   "entityId": "SYNTHETIC_TEST_STEP-499D35139A20BDFF",
+   "name": "Loading of \"http://{{ .Env.PUB_IP }}:8000/\"",
+   "sequenceNumber": 1
+  }
+ ],
+ "frequencyMin": 30,
+ "keyPerformanceMetrics": {
+  "loadActionKpm": "VISUALLY_COMPLETE",
+  "xhrActionKpm": "VISUALLY_COMPLETE"
+ },
+ "locations": [
+  "GEOLOCATION-E7F41460B2A0E4B3",
+  "GEOLOCATION-21A12C256CF533B1",
+  "GEOLOCATION-490B6966420E218F"
+ ],
+ "managementZones": [],
+ "manuallyAssignedApps": [
+  "APPLICATION-14E54C10453C5022"
+ ],
+ "name": "{{.name}}",
+ "script": {
+  "configuration": {
+   "chromiumStartupFlags": {
+    "disable-web-security": false
+   },
+   "device": {
+    "deviceName": "Desktop",
+    "orientation": "landscape"
+   },
+   "monitorFrames": {
+    "enabled": true
+   }
+  },
+  "events": [
+   {
+    "description": "Loading of \"http://{{ .Env.PUB_IP }}:8000/\"",
+    "type": "navigate",
+    "url": "http://{{ .Env.PUB_IP }}:8000/",
+    "wait": {
+     "waitFor": "page_complete"
+    }
+   }
+  ],
+  "type": "availability",
+  "version": "1.0"
+ },
+ "tags": [],
+ "type": "BROWSER"
+}
